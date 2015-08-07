@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{{$assets}}/bootstrap/css/bootstrap.min.css"/>
+
+
+    <style>
+        .clear {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            clear: both;
+        }
+
+        #content-header h1 {
+            color: #555555;
+            font-size: 28px;
+            font-weight: normal;
+            float: none;
+            text-shadow: 0 1px 0 #ffffff;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .homepage {
+            float: left;
+        }
+
+        .homepage ul {
+            list-style: none;
+            float: left;
+            padding-left: 0;
+        }
+
+        .homepage ul li {
+            float: left;
+            text-align: center;
+            /*margin-right: 5px;*/
+
+        }
+
+        .homepage ul li:last-child {
+            margin-right: 0px;
+
+        }
+
+        .homepage ul li a:hover {
+            text-decoration: none;
+            background-color: black;
+            border:1px solid transparent;
+            background-color: rgba(255, 255, 255, 0.6);
+
+        }
+
+        .homepage ul li a {
+            display: block;
+            font-size: 20px;
+            padding-top: 10px;
+            color: white;
+
+        }
+
+        .homepage ul li a i {
+            display: block;
+
+        }
+
+        .wid-box {
+
+            border-left: 1px solid #CDCDCD;
+            border-top: 1px solid #CDCDCD;
+            border-right: 1px solid #CDCDCD;
+            clear: both;
+            margin-top: 30px;
+            margin-bottom: 16px;
+
+        }
+
+        .wid-title {
+            background: #efefef;
+            border-bottom: 1px solid #CDCDCD;
+            height: 36px;
+        }
+
+        .wid-title span.icon {
+            padding: 9px 10px 7px 11px;
+            float: left;
+            border-right: 1px solid #dadada;
+        }
+
+        h5 {
+            padding-top: 10px;
+            margin-top: 0;
+        }
+
+        .span6 {
+            width: 50%;
+            float: left;
+        }
+
+        .show-conn {
+            display: none;
+        }
+
+        .nv-tm {
+            background-color: rgba(250, 244, 255, 0.80);
+
+        }
+
+        body {
+            background: url(app/assets/images/6baee73d9c189bc2a5bf7fddd9b06de4.jpg) no-repeat center right fixed;
+            background-size: cover;
+            /*background: url(app/assets/images/934c57c9d6b6f4c7dbdcc566479cd022.jpg)  center right fixed;*/
+            padding-top: 50px;
+        }
+
+
+    </style>
+    {{block name="css"}}{{/block}}
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top  nv-tm">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php?c=admin">主页</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">内容管理 <span class="badge">2</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Action</a></li>-->
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <li><a href="index.php?c=content&a=article">文章列表</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.php?c=content&a=category">栏目管理</a></li>
+                        <!--<li role="separator" class="divider"></li>-->
+
+                    </ul>
+                </li>
+                <li><a href="index.php?c=content&a=article">文件管理</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">系统设置 <span class="badge">2</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Action</a></li>-->
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <li><a href="index.php?c=admin&a=info">站点信息</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.php?c=admin&a=changepwd">密码修改</a></li>
+                        <!--<li role="separator" class="divider"></li>-->
+
+                    </ul>
+                </li>
+
+                <li><a href="#">清除缓存</a></li>
+            </ul>
+            <!--  <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+              </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#">Link</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">尊敬的 {{$admin.name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.php?c=user&a=logout">安全退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div id="content ">
+    <div id="content-header">
+        {{block name="bread"}}{{/block}}
+    </div>
+    {{block name="content"}}{{/block}}
+
+
+</div>
+
+
+<script src="{{$assets}}/js/jquery-2.1.4.min.js"></script>
+<script src="{{$assets}}/bootstrap/js/bootstrap.min.js"></script>
+{{block name="js"}}{{/block}}
+
+
+
+</body>
+</html>

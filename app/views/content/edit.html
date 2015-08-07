@@ -1,0 +1,505 @@
+{{extends file="app/views/layout/layout_admin.html"}}
+{{block name="css"}}
+<link rel="stylesheet" type="text/css" href="{{$assets}}/select2/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="{{$assets}}/colorpicker/css/colorpicker.css">
+<link rel="stylesheet" type="text/css" href="{{$assets}}/datepicker/datepicker.css">
+<style>
+    .panel-default > .panel-heading {
+        /*background-color: rgba(245, 245, 245, .8);*/
+        background: none;
+
+    }
+
+    .panel-body {
+        background: #F9F9F9;
+
+    }
+
+    #content-header img {
+        width: 240px;
+        height: 50px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .table-bordered > thead > tr > th {
+        border-bottom-width: 2px;
+    }
+
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border-left: none;
+        border-right: none;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        padding-bottom: 40px;
+    }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 26px;
+        font-weight: 700;
+        padding-top: 8px;
+    }
+
+    .input-append .add-on {
+        background-color: #eee;
+        border: 1px solid silver;
+    }
+
+    .input-append.color .add-on i, .input-prepend.color .add-on i {
+        display: block;
+        cursor: hand;
+        width: 32px;
+        height: 32px;
+        border: 6px solid #eee;
+    }
+
+    .colorpicker {
+
+        padding: 0px;
+
+    }
+
+    .gg span {
+        display: block;
+        margin-top: 10px;
+
+    }
+
+    .control-label {
+        text-align: right;
+    }
+
+    .form-actions {
+        padding: 19px 22px 20px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border-top: 3px solid #e5e5e5;
+    }
+
+    .controls img {
+        /*width: 50px;*/
+        height: 55px;
+        max-width: 100%;
+        vertical-align: middle;
+        border: none;
+        /*-ms-interpolation-mode: bicubic;*/
+        float: right;
+        margin-right: 86px;
+        margin-top: -10px;
+    }
+</style>
+
+{{/block}}
+
+{{block name="bread"}}
+<div class="col-md-5">
+    <div class="col-md-6 col-sm-6 col-xs-12 text-nowrap"><h1>文章列表</h1></div>
+    <div style="margin-top: 15px"><img src="app/assets/images/sony.jpg" class="col-md-6 " style="opacity: 0.8 "></div>
+</div>
+{{/block}}
+
+{{block name="content"}}
+<div class="col-md-12">
+    <hr>
+    <div class="panel panel-default  nv-tm col-md-10" style="padding-bottom: 10px;padding-left: 0;padding-right:0;">
+        <!-- Default panel contents -->
+        <div class="panel-heading ">
+            <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true">添加文章</span>
+        </div>
+        <div class="panel-body ">
+            <div class="table-responsive">
+                <form class="form2" action="index.php?c=content&a=editarticle" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">所属栏目</label>
+
+                        <div class="col-sm-8">
+                            <select class="form-control" name="cate_id">
+                                <option value="66" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学院概况 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="69">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    组织机构
+                                </option>
+                                <option value="68" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学院领导 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="70" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    联系方式 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="67" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学院简介 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="71" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 师资队伍 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="124">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    数字媒体
+                                </option>
+                                <option value="125">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    新闻传播
+                                </option>
+                                <option value="127">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    广&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;告
+                                </option>
+                                <option value="129">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    人文通识
+                                </option>
+                                <option value="128">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    客座教授
+                                </option>
+                                <option value="130">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    行政人员
+                                </option>
+                                <option value="131">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    实验中心
+                                </option>
+                                <option value="95" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学科建设 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="96">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    研究机构
+                                </option>
+                                <option value="97">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    重点学科
+                                </option>
+                                <option value="98">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    科学研究
+                                </option>
+                                <option value="74" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 本科生教育 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="75">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    专业设置
+                                </option>
+                                <option value="76">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    培养方案
+                                </option>
+                                <option value="99">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    教学管理
+                                </option>
+                                <option value="77" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学生作品 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="79">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    数媒
+                                </option>
+                                <option value="80">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    动画
+                                </option>
+                                <option value="81">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    摄影
+                                </option>
+                                <option value="82" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 研究生教育 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="100">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    硕士点建设
+                                </option>
+                                <option value="101">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    硕士生导师
+                                </option>
+                                <option value="83" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 党建工作 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="84" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    组织机构 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="85">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    规章制度
+                                </option>
+                                <option value="86">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    党员发展
+                                </option>
+                                <option value="87">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    师德师风
+                                </option>
+                                <option value="88">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学习园地
+                                </option>
+                                <option value="89" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 学生工作 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="90" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学工机构 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="92" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    就业指导 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="93">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    风云学子
+                                </option>
+                                <option value="102" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 实践教学 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="103" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    中心概况 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="104">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    管理制度
+                                </option>
+                                <option value="106">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    实验平台
+                                </option>
+                                <option value="107">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    实习实践
+                                </option>
+                                <option value="109" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新闻 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="110">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院
+                                </option>
+                                <option value="111">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生
+                                </option>
+                                <option value="112">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;告
+                                </option>
+                                <option value="113" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 招生就业 &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="114">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    招生工作
+                                </option>
+                                <option value="115">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    就业工作
+                                </option>
+                                <option value="94">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 首页动画大图
+                                </option>
+                                <option value="132" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="133" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;[封面]
+                                </option>
+                                <option value="136" data-type="no_add">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;[封面]
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" value="{{$article.id}}" name="id">
+                        <label for="inputPassword3" class="col-sm-2 control-label">标题</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="文章标题" name="title" value="{{$article.title}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-md-2 control-label">标题颜色</label>
+
+                        <div class="controls col-sm-4">
+                            <div data-color-format="hex" data-color="#000000" class="input-append color colorpicker">
+                                <input type="text" value="{{$article.color}}" class="form-control span6" name="color">
+                                <span class="add-on" style="float: left;">
+                                    <i style="background-color: rgb(0, 0, 0);"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">发布日期</label>
+
+                        <div class="controls col-sm-3">
+                            <input type="text" data-date-format="yyyy-mm-dd" value="{{$article.time}}" style="width:208px;"
+                                   name="time" class="form-control datepicker ">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 35px;">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Description field:</label>
+
+                        <div class="col-sm-6  gg">
+                            <input type="text" class="form-control" id="inputPassword3" name="description" value="{{$article.description}}">
+                            <span class="desc">文章描述</span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 85px;">
+                        <label for="inputPassword3" class="col-sm-2 control-label">摘要</label>
+
+                        <div class="col-sm-6 ">
+                            <textarea name="digest" rows=5 class=" form-control col-md-6">
+                                {{$article.digest}}
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group control-group thumb">
+                        <label for="inputPassword3" class="col-sm-2 control-label">缩略图</label>
+
+                        <div class="controls col-md-8 ">
+                            <input type="text" class="form-control  " id="thumb" name="picture"
+                                   style="width:50%;float:left;margin-right:5px;">
+                            <input type="button" value="上 传" onclick="BrowseServer('thumb','img_show')"
+                                   class="btn btn-success">
+                            <input type="button" value="删 除" class=" thumb_del1 btn btn-danger">
+                            <img src="" id="img_show" width="90px" height="90px"/>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">新增附件</label>
+
+                        <div class="col-md-5  ">
+                            <input type="button" class="btn btn-info col-md-3 " value="新增" id="addfile">
+                        </div>
+                    </div>
+
+                    <div class="form-group control-group thumb file">
+                        <label for="inputPassword3" class="col-sm-2 control-label">附件1</label>
+                        <div class="controls col-md-8 ">
+                            <input type="text" class="form-control  " id="thumb1" name="file[]"
+                                   style="width:50%;float:left;margin-right:5px;">
+                            <input type="button" value="上 传" onclick="BrowseServer('thumb1')" class="btn btn-success">
+                            <input type="button" value="删 除" class=" thumb_del1 btn btn-danger">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0px;padding-bottom: 0">
+                        <textarea name="editor1" class="content">
+                            {{$article.article}}
+                        </textarea>
+                    </div>
+
+                    <div class="form-actions ">
+                        <input id="back" class="btn btn-success ui-wizard-content ui-formwizard-button " type="submit"
+                               value="提交">
+                        <!--<input id="next" class="btn btn-warning ui-wizard-content ui-formwizard-button" type="button" value="返回">-->
+                        <a href="index.php?c=content&a=article" class="btn btn-warning">返回</a>
+
+                        <div id="status"><span class="label label-info"></span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="list-group">
+
+            <a href="#" class="list-group-item" id="mytime">0</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+{{/block}}
+
+
+{{block name="js"}}
+<script src="{{$assets}}/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="{{$assets}}/ckfinder/ckfinder.js"></script>
+
+<script type="text/javascript" src="{{$assets}}/select2/js/select2.min.js"></script>
+<script type="text/javascript" src="{{$assets}}/colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="{{$assets}}/datepicker/bootstrap-datepicker.js"></script>
+<script>
+
+    CKEDITOR.replace('editor1',
+            {
+                filebrowserBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+            });
+
+    $('.colorpicker').colorpicker();
+    $('.datepicker').datepicker();
+    function BrowseServer(thumb, img_show) {
+        var finder = new CKFinder();
+
+        //当选中图片时执行的函数
+        finder.selectActionFunction = function (fileUrl) {
+            $("#" + thumb).val(fileUrl);
+            $("#" + img_show).attr("src", "" + fileUrl + "");
+        }
+
+        finder.popup();//调用窗口
+    }
+    $('select').select2();
+
+    $(".thumb_del1").click(function () {
+        // $(this).prev().prev().val("");
+        $(this).parent().children().eq(0).val("");
+        $("#img_show").attr("src", "");
+    })
+
+    var n = 2;
+    $("#addfile").click(function () {
+        if (n > 5) {
+            alert("最多添加五个附件");
+            return false;
+        }
+        var html = '<div class="form-group control-group thumb file">' +
+                '<label for="inputPassword3" class="col-sm-2 control-label">附件' + n + '</label>' +
+                '<div class="controls col-md-8 ">' +
+                '<input type="text" id="file' + n + '" class="form-control" name="file[]" style="width:50%;float:left;margin-right:5px;"/>' +
+                "<input type='button'  value='上 传' onclick=BrowseServer('file" + n + "')  class='btn btn-success' />&nbsp;" +
+                '<input type="button"  value="删 除" class="file_del btn btn-danger" />&nbsp;' +
+                '</div>' +
+                '</div>';
+        $(".file:last").after(html);
+        n++;
+    })
+
+    $(document).on("click", ".file_del", function () {
+        $(this).parent().parent().remove();
+    });
+
+</script>
+
+{{/block}}

@@ -1,0 +1,202 @@
+{{extends file="app/views/layout/layout_admin.html"}}
+{{block name="css"}}
+<style>
+    .clear{
+        padding:0;
+        margin: 0;
+        border:0;
+        clear:both;
+    }
+    #content-header h1 {
+        color: #555555;
+        font-size: 28px;
+        font-weight: normal;
+        float: none;
+        text-shadow: 0 1px 0 #ffffff;
+        margin-left: 20px;
+        position: relative;
+    }
+    .container-fluid1{
+        margin-right:300px;
+    }
+
+    .quick-actions_homepage{
+        float:left;
+    }
+
+    .quick-actions_homepage ul{
+        list-style: none;
+        float:left;
+        padding-left: 0;
+    }
+    .quick-actions_homepage ul li{
+        float:left;
+        text-align: center;
+        margin-right: 10px;
+        /*margin-bottom: 0px;*/
+
+    }
+    .quick-actions_homepage ul li:last-child{
+        margin-right: 0px;
+
+    }
+
+    a:hover {
+        text-decoration: none;
+        background-color: black;
+    }
+    .quick-actions_homepage  ul li a {
+        display:block;
+        font-size: 18px;
+        padding: 10px 52px;
+        color:white;
+
+    }
+    .quick-actions_homepage  ul li a i{
+        display:block;
+
+    }
+    .span3{
+        width:285px;
+    }
+    .wid-box {
+
+        border-left: 1px solid #CDCDCD;
+        border-top: 1px solid #CDCDCD;
+        border-right: 1px solid #CDCDCD;
+        clear: both;
+
+        margin-top:30px;
+        margin-bottom: 16px;
+
+    }
+
+    .wid-title {
+        background: #efefef;
+        border-bottom: 1px solid #CDCDCD;
+        height: 36px;
+    }
+    .wid-title span.icon {
+        padding: 9px 10px 7px 11px;
+        float: left;
+        border-right: 1px solid #dadada;
+    }
+
+    h5 {
+        padding-top:10px;
+        margin-top:0;
+    }
+    .span6{
+        width:50%;
+        float:left;
+    }
+
+</style>
+{{/block}}
+{{block name="bread"}}
+<h1>我的信息</h1>
+<img src="app/assets/images/sony.jpg" style="opacity: 0.7">
+{{/block}}
+{{block name="content"}}
+<div class="container-fluid1">
+    <hr>
+    <div class="quick-actions_homepage">
+        <ul class="quick-actions">
+            <li class="btn-success span3"><a href="/Content/Category/index"> <i class="glyphicon glyphicon-pencil"></i>内容管理</a></li>
+            <li class="btn-info"><a href="/static/ckfinder/ckfinder2.html"> <i class="glyphicon glyphicon-cloud"></i>文件管理</a></li>
+            <li class="btn-warning"><a href="/FriendLink/Index/index"> <i class="glyphicon glyphicon-star"></i>友情链接管理</a></li>
+            <li class="btn-danger"><a href="/User/Setting/changeInfo"> <i class="glyphicon glyphicon-user"></i>用户管理</a></li>
+            <li class="btn-primary"><a href="/System/Cache/clearCache"> <i class=" glyphicon glyphicon-refresh"></i>清除缓存</a></li>
+
+            <!--<li class="bg_ls"><a href="index.html"> <i class="icon-envelope"></i> <span
+                    class="label label-important">20</span>访客留言</a></li>-->
+        </ul>
+    </div>
+    <!--<div class="clear"></div>-->
+    <!--面板-->
+    <!-- <div class="wid-box">
+         <div class="wid-title">
+             <span class="icon"> <i class="glyphicon glyphicon-briefcase"></i> </span>
+             <h5>我的信息</h5>
+         </div>
+
+     </div>-->
+    <div class="clear"></div>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="glyphicon glyphicon-briefcase" aria-hidden="true">   我的信息</span> </div>
+        <div class="panel-body">
+            <p>...</p>
+        </div>
+        <div class="span6">
+            <!-- List group -->
+            <table class="table table-hover">
+                <caption>Optional table caption.</caption>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="span6">
+            <table class="table table-bordered table-hover ">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{{/block}}
+
+

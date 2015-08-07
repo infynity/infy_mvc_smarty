@@ -1,0 +1,338 @@
+{{extends file="app/views/layout/layout_admin.html"}}
+{{block name="css"}}
+<link rel="stylesheet" type="text/css" href="{{$assets}}/select2/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="{{$assets}}/colorpicker/css/colorpicker.css">
+<link rel="stylesheet" type="text/css" href="{{$assets}}/datepicker/datepicker.css">
+<style>
+    .panel-default > .panel-heading {
+        background-color: silver;
+
+    }
+
+    .panel-default > .panel-heading a {
+        display: block;
+        float: left;
+        padding: 10px;
+    }
+
+    .panel-body {
+        background: #F9F9F9;
+
+    }
+
+    #content-header img {
+        width: 240px;
+        height: 50px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .table-bordered > thead > tr > th {
+        border-bottom-width: 2px;
+    }
+
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        border-left: none;
+        border-right: none;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        padding-bottom: 40px;
+    }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 26px;
+        font-weight: 700;
+        padding-top: 8px;
+    }
+
+    .input-append .add-on {
+        background-color: #eee;
+        border: 1px solid silver;
+    }
+
+    .input-append.color .add-on i, .input-prepend.color .add-on i {
+        display: block;
+        cursor: hand;
+        width: 32px;
+        height: 32px;
+        border: 6px solid #eee;
+    }
+
+    .colorpicker {
+
+        padding: 0px;
+
+    }
+
+    .gg span {
+        display: block;
+        margin-top: 10px;
+
+    }
+
+    .control-label {
+        text-align: right;
+    }
+
+    .form-actions {
+        padding: 19px 22px 20px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border-top: 3px solid #e5e5e5;
+    }
+
+    img {
+        /*width: 50px;*/
+        height: 34px;
+        max-width: 100%;
+        vertical-align: middle;
+        border: none;
+        /*-ms-interpolation-mode: bicubic;*/
+    }
+
+    .nn li {
+        float: left;
+
+    }
+
+    .nn li a {
+        color: black;
+    }
+
+    .nn li a:hover {
+        background: none;
+        font-weight: bold;
+    }
+
+    .nn li a:focus {
+        background-color: #F9F9F9;
+
+
+    }
+
+    li.active a:focus{
+        cursor:se-resize;
+
+    }
+    li.active {
+        font-weight: bold;
+        background-color: #F9F9F9;
+    }
+    .resc{
+        border-bottom: 1px solid midnightblue;
+        height: 38px;
+    }
+</style>
+
+{{/block}}
+
+{{block name="bread"}}
+<div class="col-md-5">
+    <div class="col-md-6 col-sm-6 col-xs-12 text-nowrap"><h1>文章列表</h1></div>
+    <div style="margin-top: 15px"><img src="app/assets/images/sony.jpg" class="col-md-6 " style="opacity: 0.8 "></div>
+</div>
+{{/block}}
+
+{{block name="content"}}
+<div class="col-md-12">
+    <hr>
+    <div class="panel panel-default  nv-tm col-md-10" style="padding-bottom: 10px;padding-left: 0;padding-right:0;">
+        <!-- Default panel contents -->
+        <div class="resc">
+            <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true" style="display: block;float:left;padding:10px;"></span>
+            <ul class="nav nn">
+                <li class="active"><a href="javascript:void 0;">添加栏目</a></li>
+                <li class=""><a href="javascript:void 0;">栏目内容</a></li>
+            </ul>
+        </div>
+        <div class="panel-body ">
+            <div class="table-responsive">
+                <form class="form2" action="index.php?c=content&a=addonecate" method="post">
+
+                    <div class="tab">
+                        <div class="tab1">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">父栏目</label>
+
+                                <div class="col-sm-8">
+                                    <select class="form-control" name="cate_id">
+                                        {{foreach $cates as $cate}}
+                                        <option value="{{$cate.id}}" data-type="no_add">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {{for $i=1;$i<$cate.count;$i++}}
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {{/for}}{{$cate.name}} &nbsp;&nbsp;&nbsp;{{if $cate.type eq 1}}<span style="color:#a7cb52;">[封面]</span>{{/if}}
+                                        </option>
+                                        {{/foreach}}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label for="inputPassword3" class="col-sm-2 control-label">名称</label>
+
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="" name="name">
+                                </div>
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="inputPassword3" class="col-md-2 control-label">拼音</label>
+
+                                <div class="controls col-sm-6">
+                                    <div>
+                                        <input type="text" value class="form-control span6" name="pinyin">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label" style="margin-top: 10px;">类型</label>
+
+                                <!--<div class="controls col-sm-3">-->
+                                    <!--<input type="radio" name="type" > 封面<input type="radio" name="type" > 列表<input type="radio" name="type"  > url跳转-->
+                                <!--</div>-->
+                                <div class="col-sm-10">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type" id="optionsRadios1" value="option1" checked>
+                                            Option one is this and that&mdash;be sure to include why it's great
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                            Option two can be something else and selecting it will deselect option one
+                                        </label>
+                                    </div>
+                                    <div class="radio ">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                            Option three is disabled
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">URL跳转地址</label>
+
+                                <div class="col-sm-6  gg">
+                                    <input type="text" class="form-control" id="inputPassword3" name="url">
+                                    <span class="desc">文章描述</span>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div class="tab2" style="display: none;">
+                            <div class="form-group" style="margin-bottom: 0px;padding-bottom: 0">
+                                <textarea name="editor1" class="content">
+                                    文本域
+                                </textarea>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label" style="margin-top: 10px;">是否显示</label>
+                        <div class="col-sm-10">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="showor" id="optionsRadios1" value="option1" checked>
+                                    Option one is this and that&mdash;be sure to include why it's great
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="showor" id="optionsRadios2" value="option2">
+                                    Option two can be something else and selecting it will deselect option one
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="form-actions ">
+                        <input id="sub" class="btn btn-success ui-wizard-content ui-formwizard-button " type="submit"
+                               value="提交">
+                        <!--<input id="next" class="btn btn-warning ui-wizard-content ui-formwizard-button" type="button" value="返回">-->
+                        <a href="index.php?c=content&a=article" class="btn btn-warning">返回</a>
+
+                        <div id="status"><span class="label label-info"></span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="list-group">
+
+            <a href="#" class="list-group-item" id="mytime">0</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+{{/block}}
+
+
+{{block name="js"}}
+<script src="{{$assets}}/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="{{$assets}}/ckfinder/ckfinder.js"></script>
+
+<script type="text/javascript" src="{{$assets}}/select2/js/select2.min.js"></script>
+<script type="text/javascript" src="{{$assets}}/colorpicker/js/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="{{$assets}}/datepicker/bootstrap-datepicker.js"></script>
+<script>
+
+    CKEDITOR.replace('editor1',
+            {
+                filebrowserBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html?type=Images',
+                filebrowserFlashBrowseUrl: '{{$assets}}/ckfinder/ckfinder.html?type=Flash',
+                filebrowserUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl: '{{$assets}}/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+            });
+
+    $('.colorpicker').colorpicker();
+    $('.datepicker').datepicker();
+    function BrowseServer(thumb, img_show) {
+        var finder = new CKFinder();
+
+        //当选中图片时执行的函数
+        finder.selectActionFunction = function (fileUrl) {
+            $("#" + thumb).val(fileUrl);
+            $("#" + img_show).attr("src", "" + fileUrl + "");
+        }
+
+        finder.popup();//调用窗口
+    }
+    $('select').select2();
+
+    $(".nn li").click(function () {
+        var index = $(this).index() + 1;
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".tab" + index).show().siblings().hide();
+    })
+    setInterval(function () {
+        var a = parseInt($("#mytime").text()) + 1;
+        $("#mytime").text(a)
+    }, 1000)
+    $("#sub").click(function(){
+
+        $(".form2").submit();
+    })
+</script>
+
+{{/block}}
