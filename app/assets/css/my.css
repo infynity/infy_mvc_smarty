@@ -165,20 +165,27 @@ body{
     float: left;
     background: white;
 }
-
-.f1 {
-    background: url("../images/1.jpg") no-repeat;
+.f1,.f2,.f3,.f4,.f5,.f6,.f7,.f8{
     height: 345px;
+    width:725px;
+}
+.f1234 img{
+
+    height: 345px;
+    width:725px;
 }
 
-.f2 {
-    background: url("../images/2.jpg") no-repeat;
+/*.f2 {
+    background: url("../images/211330_8338233665.jpg") no-repeat;
     height: 345px;
+    background-size: 725px 345px;
 }
 
 .f3 {
-    background: url("../images/3.jpg") no-repeat;
+    background: url("../images/031201.jpg") no-repeat;
     height: 345px;
+    background-size: 725px 345px;
+
 }
 
 .f4 {
@@ -213,7 +220,7 @@ body{
     height: 345px;
     width: 725px;
     background-size: 725px 345px;
-}
+}*/
 
 .f1234 {
     width: 725px;
@@ -236,20 +243,16 @@ body{
     margin-left: 11px;
 }
 
-.mt div:hover {
 
-}
-
-.mt div {
-    margin-bottom: 17px;
-}
-
-.case1, .case2, .case3, .case4 {
+.case1{
     width: 111px;
     height: 52px;
     cursor: pointer;
+    margin-bottom: 17px;
 }
-
+.casebot{
+    margin-bottom: 2px;
+}
 .case {
     height: 259px;
     overflow: hidden;
@@ -491,6 +494,7 @@ p span{
     margin: 0 auto;
     width: 63px;
    height:55px;
+    border-radius: 5px;
 }
 .version {
     height: 26px;
@@ -629,9 +633,11 @@ background: #fff;
     height:200px;
     position:fixed;
     right:0px;
-    top:380px;
+    bottom:90px;
+	
 
 }
+
 .sideul{
     list-style: none;
 
@@ -706,4 +712,34 @@ background: #fff;
     left:79%;
     z-index: 9;
     cursor: pointer;
+}
+.pre2{
+    cursor: pointer;
+    height: 60px;
+    width: 66px;
+    position: absolute;
+    top: 82%;
+    padding: 0;
+    background: #d2d2d2;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    opacity: 0.7;
+}
+.pre2:hover,.next2:hover{
+    opacity: 1;
+}
+.next2{
+    cursor: pointer;
+    height: 60px;
+    width: 66px;
+    position: absolute;
+    top: 82%;
+    right:15%;
+    padding: 0;
+    background: #d2d2d2;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    opacity: 0.5;
 }

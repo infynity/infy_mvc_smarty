@@ -84,54 +84,58 @@
 <div class="main">
     <div class="left_focus">
         <div class="f1234">
-            <div class="f1"></div>
-            <div class="f2 dsp_n"></div>
-            <div class="f3 dsp_n"></div>
-            <div class="f4 dsp_n"></div>
-            <div class="f5 dsp_n"></div>
-            <div class="f6 dsp_n"></div>
-            <div class="f7 dsp_n"></div>
-            <div class="f8 dsp_n"></div>
+            {{foreach $imgs as $k=>$img}}
+
+                <div class="f{{$k+1}} {{if $k neq 0}} dsp_n {{/if}}">
+                    <img src="{{$img.file}}" width="101">
+                </div>
+            {{/foreach}}
+         <!--   <div class="f2 dsp_n">
+
+            </div>
+            <div class="f3 dsp_n">
+
+            </div>
+            <div class="f4 dsp_n">
+
+            </div>
+            <div class="f5 dsp_n">
+
+            </div>
+            <div class="f6 dsp_n">
+
+            </div>
+            <div class="f7 dsp_n">
+
+            </div>
+            <div class="f8 dsp_n">
+
+            </div>-->
 
         </div>
-        <div class="rile">
-            <a href="" class="pre"></a>
-            <a href="" class="next"></a>
+        <!--<div class="rile">-->
+            <!--<a href="" class="pre"></a>-->
+            <!--<a href="" class="next"></a>-->
+        <!--</div>-->
+        <div class="pre2">
+           <
         </div>
+        <div class="next2">
+           >
+        </div>
+
         <div class="mt">
             <div class="showcase-thumbnail-button-backward">
                 <span class="showcase-thumbnail-vertical"></span>
             </div>
             <div class="case" style="margin-bottom: 10px;">
                 <div class="caselist">
-                    <div class="case1 active" >
-                        <img src="{{$assets}}/images/1.jpg" width="101">
+                    {{foreach $imgs as $k=>$img}}
+                    <div class="case1 {{if $k eq 0}} active {{/if}}  {{if $k eq 3||$k eq 7}} casebot{{/if}}">
+                        <img src="{{$img.file}}" width="101">
                     </div>
-                    <div class="case2">
-                        <img src="{{$assets}}/images/2.jpg" width="101">
+                    {{/foreach}}
 
-                    </div>
-                    <div class="case3">
-                        <img src="{{$assets}}/images/3.jpg" width="101">
-
-                    </div>
-                    <div class="case4" style="margin-bottom: 2px;">
-                        <img src="{{$assets}}/images/4.jpg" width="101">
-                    </div>
-                    <div class="case1">
-                        <img src="{{$assets}}/images/5.jpg" width="101">
-                    </div>
-                    <div class="case2">
-                        <img src="{{$assets}}/images/6.jpg" width="101">
-
-                    </div>
-                    <div class="case3">
-                        <img src="{{$assets}}/images/7.jpg" width="101">
-
-                    </div>
-                    <div class="case4" style="margin-bottom: 2px;">
-                        <img src="{{$assets}}/images/8.jpg" width="101">
-                    </div>
                 </div>
             </div>
             <div class="showcase-thumbnail-button-forward" style="margin-bottom: 0">
@@ -144,11 +148,11 @@
     </div>
     <div class="right_search">
         <div class="xcp_input">
-            <!--<form action="" method="post">-->
+            <form action="" method="post">
             <input name="k" value="可查找一部车的优缺点、油耗、视频……" type="text" class="xcp_text"
                    style="color: rgb(153, 153, 153); outline: none;">
             <input name="" type="submit" class="xcp_ssbt" value="">
-            <!--</form>-->
+            </form>
         </div>
 
         <div class="scroll" style="margin-bottom: 4px;">
@@ -215,7 +219,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/TB1EUoMHVXXXXb0XpXXSutbFXXX.jpg" alt=""></a></p>
+                                        src="{{$assets}}/images/rdn_51f63a487103a.png" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">北京云梦网络科技有限公司</p>
@@ -232,7 +236,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/TB1EUoMHVXXXXb0XpXXSutbFXXX.jpg" alt=""></a></p>
+                                        src="{{$assets}}/images/u=650362668,1987062105&fm=15&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">北京云梦网络科技有限公司</p>
@@ -248,7 +252,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/TB1EUoMHVXXXXb0XpXXSutbFXXX.jpg" alt=""></a></p>
+                                        src="{{$assets}}/images/u=4056107647,1925316932&fm=21&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">北京云梦网络科技有限公司</p>
@@ -264,7 +268,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/TB1EUoMHVXXXXb0XpXXSutbFXXX.jpg" alt=""></a></p>
+                                        src="{{$assets}}/images/2511774_LogoiG.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">北京云梦网络科技有限公司</p>
@@ -281,7 +285,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/TB1EUoMHVXXXXb0XpXXSutbFXXX.jpg" alt=""></a></p>
+                                        src="{{$assets}}/images/u=646450047,3069659210&fm=21&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">北京云梦网络科技有限公司</p>
@@ -401,7 +405,7 @@
 <div class="article">
     <div class="article_main">
         <div class="article1">
-            <h3>精彩评测</h3>
+            <h3>联盟新闻</h3>
             <a href="" class="more-entry">...</a>
             <ul>
                 <li><a href="http://bbs.yunos.com/read/263302997" target="_blank">黑色版纽曼纽扣开箱 高颜值国民指纹机</a></li>
@@ -411,7 +415,7 @@
             </ul>
         </div>
         <div class="article2">
-            <h3>精彩评测</h3>
+            <h3>精彩视频</h3>
             <ul>
                 <li><a href="http://bbs.yunos.com/read/263302997" target="_blank">黑色版纽曼纽扣开箱 高颜值国民指纹机</a></li>
                 <li><a href="http://bbs.yunos.com/read/263302997" target="_blank">黑色版纽曼纽扣开箱 高颜值国民指纹机</a></li>
@@ -420,7 +424,7 @@
             </ul>
         </div>
         <div class="article3">
-            <h3>精彩评测</h3>
+            <h3>玩家留言</h3>
             <ul>
                 <li><a href="http://bbs.yunos.com/read/263302997" target="_blank">黑色版纽曼纽扣开箱 高颜值国民指纹机</a></li>
                 <li><a href="http://bbs.yunos.com/read/263302997" target="_blank">黑色版纽曼纽扣开箱 高颜值国民指纹机</a></li>

@@ -23,4 +23,12 @@ class IndexModel extends CommonModel
         $this->db->query("insert into article (`cate_id`,`title`,`article`,`date`) values ('1','$title','$article','$date')");
 
     }
+
+
+    function getimgs(){
+        $articles = $this->all("select * from images  where `display`='1' order by id desc");
+        return $articles;
+
+    }
+
 }

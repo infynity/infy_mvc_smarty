@@ -81,4 +81,17 @@ class ContentController extends CommonController
             $this->jump("index.php?c=content&a=article", "修改成功");
         }
     }
+
+    function addimage(){
+        $this->display();
+    }
+
+    function addimg(){
+        if ($_POST) {
+            dump($_POST);
+           $this->model->addimg($_POST);
+            $this->jump("index.php?c=content&a=addimage", "添加成功");
+
+        }
+    }
 }

@@ -133,4 +133,13 @@ class ContentModel extends CommonModel
         $file=join("+",$file);
         $this->db->query("update con_article set `title`='$title', `article`='$article', `color`='$color', `cate_id`='$cate_id', `time`='$time', `description`='description', `digest`='$digest', `picture`='$picture', `file`='$file' where id='$id'");
     }
+
+
+    function addimg($p){
+        $file=$p['picture'];
+        $time=$p['time'];
+        $this->db->query("insert into images (`file`, `time`) values ('$file','$time')");
+
+
+    }
 }
