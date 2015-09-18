@@ -7,6 +7,8 @@ class IndexController extends CommonController
         $imgs = $this->model->getimgs();
         $this->assign("imgs", $imgs);
         $this->display();
+
     }
 
 }
+

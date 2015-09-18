@@ -479,10 +479,54 @@ p span{
 .recommend li:last-child{
     border-right: none;
 }
+
+
 .detail {
     height: 194px;
+    width:231px;
     margin: 0 auto;
+    background:silver;
+    position:absolute;
+    z-index:2;
 }
+.detail2{
+    height: 194px;
+    width:231px;
+    position:absolute;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.reccont li:hover .detail{
+    z-index:1;
+    transition: all 0.4s ease	 0s;
+    -webkit-transform: rotateY(-180deg);
+
+}
+.reccont li:hover .detail2{
+    z-index:2;
+    /*opacity: 0.6;*/
+    transition: all 0.4s ease	 0s;
+    -webkit-transform: rotateY(0deg);
+
+}
+/*.detail:hover {*/
+    /*z-index:1;*/
+    /*transition: all 1.5s ease .3s;*/
+    /*-webkit-transform: rotateY(180deg);*/
+
+
+/*}*/
+/*.detail2:hover {*/
+    /*transition: all 1.5s ease .2s;*/
+    /*z-index:2;*/
+    /*-webkit-transform: rotateY(360deg);*/
+
+
+/*}*/
+
+
+
 .picbox {
     height: 80px;
     padding-top: 22px;
@@ -519,9 +563,13 @@ p span{
 }
 .button{
     background: #1291be;
-    height: 24px;
+    height: 21px;
     text-align: center;
     display: none;
+    position: absolute;
+    width:231px;
+    z-index:5;
+    bottom:0px;
 }
 .button a{
     display: block;

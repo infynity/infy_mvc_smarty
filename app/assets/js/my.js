@@ -71,7 +71,6 @@ $(function () {
         }
     })
 
-
     var i = 2;
     $("#ct").click(function () {
         $(".f" + i).stop().fadeIn(600).siblings().stop().hide();
