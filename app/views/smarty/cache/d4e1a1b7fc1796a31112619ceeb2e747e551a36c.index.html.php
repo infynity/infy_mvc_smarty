@@ -1,15 +1,39 @@
-<!DOCTYPE html>
+<?php /*%%SmartyHeaderCode:1491942449560d0c0bc32ce5-58713613%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'd4e1a1b7fc1796a31112619ceeb2e747e551a36c' => 
+    array (
+      0 => '/var/www/infy/app/views/index/index.html',
+      1 => 1444148045,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1491942449560d0c0bc32ce5-58713613',
+  'cache_lifetime' => 3600,
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_5613f34f2a5785_09051314',
+  'variables' => 
+  array (
+    'assets' => 0,
+    'imgs' => 0,
+    'k' => 0,
+    'img' => 0,
+  ),
+  'has_nocache_code' => false,
+),true); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5613f34f2a5785_09051314')) {function content_5613f34f2a5785_09051314($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>infy的网站页面</title>
 
-    <link rel="stylesheet" href="{{$assets}}/css/my.css" type="text/css"/>
-    <link rel="stylesheet" href="{{$assets}}/css/chat.css" type="text/css"/>
-     <link rel="stylesheet" href="{{$assets}}/css/remodal.css">
-  <link rel="stylesheet" href="{{$assets}}/css/remodal-default-theme.css">
-    <link href="{{$assets}}/shizhong/css/fliptimer.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/app/assets/css/my.css" type="text/css"/>
+    <link rel="stylesheet" href="/app/assets/css/chat.css" type="text/css"/>
+     <link rel="stylesheet" href="/app/assets/css/remodal.css">
+  <link rel="stylesheet" href="/app/assets/css/remodal-default-theme.css">
+    <link href="/app/assets/shizhong/css/fliptimer.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=owGOSUIYLIPME0SYjLfiQ1ML"></script>
 
 </head>
@@ -18,7 +42,7 @@
 <div class="top">
     <div class="container">
         <div class="img">
-            <a href=""><img src="{{$assets}}/images/competitors.png" alt=""/></a>
+            <a href=""><img src="/app/assets/images/competitors.png" alt=""/></a>
         </div>
         <div class="header">
             <div class="app">
@@ -74,8 +98,8 @@
     <div class="container">
         <div class="tan3 dsp_n" style="float:right; margin-bottom: 7px;" data="yy">
             <div class="fighting" style="float: left;height:104px;width: 665px;position:relative;">
-                <img src="{{$assets}}/images/5-15062FZ937.gif" style="margin-top: 35px;">
-                <img src="{{$assets}}/images/smiley.png" style="width:26px;margin-top: 35px;position:absolute;left:28px;top:7px;">
+                <img src="/app/assets/images/5-15062FZ937.gif" style="margin-top: 35px;">
+                <img src="/app/assets/images/smiley.png" style="width:26px;margin-top: 35px;position:absolute;left:28px;top:7px;">
             </div>
             <div class="dowebok " style="float: left">
                 <div class="hours"></div>
@@ -95,13 +119,39 @@
 
     <div class="left_focus">
         <div class="f1234">
-            {{foreach $imgs as $k=>$img}}
-
-                <div class="f{{$k+1}} {{if $k neq 0}} dsp_n {{/if}}">
-                    <img src="{{$img.file}}" >
+            
+                <div class="f1 ">
+                    <img src="/upload/images/rdn_532bf579c1e8d.jpg" >
                 </div>
-            {{/foreach}}
-
+            
+                <div class="f2  dsp_n ">
+                    <img src="/upload/images/211330_8338233665.jpg" >
+                </div>
+            
+                <div class="f3  dsp_n ">
+                    <img src="/upload/images/1_141119094411_1.jpg" >
+                </div>
+            
+                <div class="f4  dsp_n ">
+                    <img src="/upload/images/934c57c9d6b6f4c7dbdcc566479cd022.jpg" >
+                </div>
+            
+                <div class="f5  dsp_n ">
+                    <img src="/upload/images/104341582816.jpg" >
+                </div>
+            
+                <div class="f6  dsp_n ">
+                    <img src="/upload/images/rdn_532bf579c1e8d.jpg" >
+                </div>
+            
+                <div class="f7  dsp_n ">
+                    <img src="/upload/images/105947749596.jpg" >
+                </div>
+            
+                <div class="f8  dsp_n ">
+                    <img src="/upload/images/031201.jpg" >
+                </div>
+            
         </div>
 
         <div class="pre2">
@@ -117,12 +167,31 @@
             </div>
             <div class="case" style="margin-bottom: 10px;">
                 <div class="caselist">
-                    {{foreach $imgs as $k=>$img}}
-                    <div class="case1 {{if $k eq 0}} active {{/if}}  {{if $k eq 3||$k eq 7}} casebot{{/if}}">
-                        <img src="{{$img.file}}" width="101">
+                                        <div class="case1  active   ">
+                        <img src="/upload/images/rdn_532bf579c1e8d.jpg" width="101">
                     </div>
-                    {{/foreach}}
-
+                                        <div class="case1   ">
+                        <img src="/upload/images/211330_8338233665.jpg" width="101">
+                    </div>
+                                        <div class="case1   ">
+                        <img src="/upload/images/1_141119094411_1.jpg" width="101">
+                    </div>
+                                        <div class="case1    casebot">
+                        <img src="/upload/images/934c57c9d6b6f4c7dbdcc566479cd022.jpg" width="101">
+                    </div>
+                                        <div class="case1   ">
+                        <img src="/upload/images/104341582816.jpg" width="101">
+                    </div>
+                                        <div class="case1   ">
+                        <img src="/upload/images/rdn_532bf579c1e8d.jpg" width="101">
+                    </div>
+                                        <div class="case1   ">
+                        <img src="/upload/images/105947749596.jpg" width="101">
+                    </div>
+                                        <div class="case1    casebot">
+                        <img src="/upload/images/031201.jpg" width="101">
+                    </div>
+                    
                 </div>
             </div>
             <div class="showcase-thumbnail-button-forward" style="margin-bottom: 0">
@@ -146,11 +215,11 @@
             <div id=demo style="overflow:hidden;height:220px;width:270px;background:white;color:#ffffff">
                 <div id=demo1>
                       <a href="javascript:void(0);" class='mywfh'>
-                        <img src="{{$assets}}/images/welcome.jpg">
+                        <img src="/app/assets/images/welcome.jpg">
                     </a>
                     <a href="javascript:void(0);" class='mywfh'>
                         <div class="hotlist">
-                            <img src="{{$assets}}/images/tibaiwan.jpg">
+                            <img src="/app/assets/images/tibaiwan.jpg">
                             <span style="color:red">#关于本站#</span>
                             本站设计灵感来自some国内名站，图标，图片来自网络。html，css，js编写均由本人自己完成(运用部分JS插件)。目前着重于前台项目展示，赞未设置内容页。
                             <br>
@@ -162,7 +231,7 @@
                  
                     <a href="http://wfhshop.whphp.com/admin">
                         <div class="hotlist">
-                            <img src="{{$assets}}/images/3.jpg">
+                            <img src="/app/assets/images/3.jpg">
                             
                             <span style="color:blue;">##</span>
                             为我的后台项目展示页,点击即可跳转。项目为基于Laravel+AmazeUI开发的微信商城前后台。
@@ -173,10 +242,10 @@
                         </div>
                     </a>
                        <a href="javascript:void(0);" class='mywfh' style="height:130px;">
-                        <img src="{{$assets}}/images/me.jpg">
+                        <img src="/app/assets/images/me.jpg">
                     </a>
                     <a href="javascript:void(0);" class='mywfh'>
-                        <img src="{{$assets}}/images/6baee73d9c189bc2a5bf7fddd9b06de4.jpg">
+                        <img src="/app/assets/images/6baee73d9c189bc2a5bf7fddd9b06de4.jpg">
                     </a>
                   
                 </div>
@@ -186,13 +255,13 @@
         <div class="bottom-tag">
             <ul>
                 <li style="margin-left:0px;"><a href="javascript:void(0);" onclick="AddFavorite(window.location,document.title)"class="xcp_car bg" target="_blank">
-                    <img src="{{$assets}}/images/bianping-yuanicon-08.png" alt=""/><span style="color:black">收藏本页</span></a></li>
+                    <img src="/app/assets/images/bianping-yuanicon-08.png" alt=""/><span style="color:black">收藏本页</span></a></li>
                 <li><a href="#modal" class="pricedown bg">
-                    <img src="{{$assets}}/images/bianping-yuanicon-12.png" alt=""/><span style="color:black">降价提醒</span></a></li>
+                    <img src="/app/assets/images/bianping-yuanicon-12.png" alt=""/><span style="color:black">降价提醒</span></a></li>
                 <li><a href="#modal" class="xcp_gift bg" >
-                    <img src="{{$assets}}/images/bianping-yuanicon-03.png" alt=""/><span style="color:black">我的汽车</span></a></li>
+                    <img src="/app/assets/images/bianping-yuanicon-03.png" alt=""/><span style="color:black">我的汽车</span></a></li>
                 <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1278082436&site=qq&menu=yes" class="xcp_pic bg" target="_blank">
-                    <img src="{{$assets}}/images/bianping-yuanicon-09.png" alt=""/><span style="color:black">与我联系</span></a></li>
+                    <img src="/app/assets/images/bianping-yuanicon-09.png" alt=""/><span style="color:black">与我联系</span></a></li>
             </ul>
         </div>
     </div>
@@ -213,7 +282,7 @@
                     <div class="detail">
                         <div class="picbox">
                             <div class="pic">
-                                <p><img src="{{$assets}}/images/rdn_51f63a487103a4.png" alt=""></p>
+                                <p><img src="/app/assets/images/rdn_51f63a487103a4.png" alt=""></p>
                             </div>
                         </div>
                         <p class="version">OMG星球之光</p>
@@ -222,7 +291,7 @@
                        恐怕这就是怀才不遇吧</p>
                     </div>
                     <div class="detail2">
-                        <img src="{{$assets}}/images/u778899.jpg" style='width:231px;height:194px;' alt="">
+                        <img src="/app/assets/images/u778899.jpg" style='width:231px;height:194px;' alt="">
                     </div>
 
                     <div class="button">
@@ -242,7 +311,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/2511774_LogoiG.jpg" alt=""></a></p>
+                                        src="/app/assets/images/2511774_LogoiG.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">IG老五</p>
@@ -250,7 +319,7 @@
                         <p class="company">有一种感觉，叫我也可以让二追三 从那个时代开始，一直是主角</p>
                     </div>
                     <div class="detail2">
-                        <img src="{{$assets}}/images/u=1067467335,4085502195&fm=21&gp=0.jpg" style='width:231px;height:194px;' alt="">
+                        <img src="/app/assets/images/u=1067467335,4085502195&fm=21&gp=0.jpg" style='width:231px;height:194px;' alt="">
                     </div>
                     <div class="button">
                         <a href="">查看详情 <i></i></a>
@@ -261,7 +330,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/u=4056107647,1925316932&fm=21&gp=0.jpg" alt=""></a></p>
+                                        src="/app/assets/images/u=4056107647,1925316932&fm=21&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">浪哥队</p>
@@ -269,7 +338,7 @@
                         <p class="company">有种实力就叫LGD<br/>占领欧美大陆吧,pikaqiu</p>
                     </div>
                     <div class="detail2">
-                        <img src="{{$assets}}/images/res01_attpic_brief.jpg" style='width:231px;height:194px;' alt="">
+                        <img src="/app/assets/images/res01_attpic_brief.jpg" style='width:231px;height:194px;' alt="">
                     </div>
                     <div class="button">
                         <a href="">查看详情 <i></i></a>
@@ -280,7 +349,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/u=650362668,1987062105&fm=15&gp=0.jpg" alt=""></a></p>
+                                        src="/app/assets/images/u=650362668,1987062105&fm=15&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">EDG厂队</p>
@@ -288,7 +357,7 @@
                         <p class="company">世界冠军，为了梦想所有人都在拼愚人不努力，懒人盼巅峰</p>
                     </div>
                      <div class="detail2">
-                        <img src="{{$assets}}/images/57-1505141522380-L.jpg" style='width:231px;height:194px;' alt="">
+                        <img src="/app/assets/images/57-1505141522380-L.jpg" style='width:231px;height:194px;' alt="">
                     </div>
                     <div class="button">
                         <a href="">查看详情 <i></i></a>
@@ -300,7 +369,7 @@
                         <div class="picbox">
                             <div class="pic">
                                 <p><a href="http://market.aliyun.com/store/57801.html?" target="_blank"><img
-                                        src="{{$assets}}/images/u=646450047,3069659210&fm=21&gp=0.jpg" alt=""></a></p>
+                                        src="/app/assets/images/u=646450047,3069659210&fm=21&gp=0.jpg" alt=""></a></p>
                             </div>
                         </div>
                         <p class="version">Classical_WE</p>
@@ -308,7 +377,7 @@
                         <p class="company">真正的战队，五个人，兄弟一辈子感动与成功同在</p>
                     </div>
                     <div class="detail2">
-                        <img src="{{$assets}}/images/2645938_33_thumb.jpg" style='width:231px;height:194px;' alt="">
+                        <img src="/app/assets/images/2645938_33_thumb.jpg" style='width:231px;height:194px;' alt="">
                     </div>
                     <div class="button">
                         <a href="">查看详情 <i></i></a>
@@ -344,10 +413,10 @@
                 </form>
             </div>
         </div>
-        <img src="{{$assets}}/images/zzzz.jpg" alt="" style="margin-left:9px;"/>
+        <img src="/app/assets/images/zzzz.jpg" alt="" style="margin-left:9px;"/>
 
-        <img src="{{$assets}}/images/ssss.jpg" alt="" style="margin-left:9px;position: absolute;left:492px;top:242px;"/>
-        <img src="{{$assets}}/images/aaaa.jpg" alt="" style="width:155px;margin-left:18px;position: absolute;left:491px;top:188px;"/>
+        <img src="/app/assets/images/ssss.jpg" alt="" style="margin-left:9px;position: absolute;left:492px;top:242px;"/>
+        <img src="/app/assets/images/aaaa.jpg" alt="" style="width:155px;margin-left:18px;position: absolute;left:491px;top:188px;"/>
         <div style="float: left">
             <button id="send" class="button1 blue larrow ">来吐了个槽ba^-^</button>
         </div>
@@ -457,7 +526,7 @@
         <li><a href="#modal" class=" openside receptionist">呼叫客服</a></li>
         <li>
             <a href="" class="addapp" style="height:44px;">
-            <img src="{{$assets}}/images/mywechat.jpg" style="display: none;position: relative;right:106px;top:-1px;border: 1px solid silver;">
+            <img src="/app/assets/images/mywechat.jpg" style="display: none;position: relative;right:106px;top:-1px;border: 1px solid silver;">
             </a>
         </li>
     </ul>
@@ -482,8 +551,8 @@
   <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
   <div>
     <h2 id="modal1Title">功能完善中</h2>
-    <img src="{{$assets}}/images/mywechat.jpg" style="max-width:180px;">
-    <img src="{{$assets}}/images/wakao.jpg" style="max-width:180px;">
+    <img src="/app/assets/images/mywechat.jpg" style="max-width:180px;">
+    <img src="/app/assets/images/wakao.jpg" style="max-width:180px;">
     <p id="modal1Desc">
  先用微信扫扫上方的二维码，逛逛我的微信商城吧^-^ </p>
   </div>
@@ -493,14 +562,14 @@
 </div>
 <!-- 普通弹出层 ]] -->
 
-<script src="{{$assets}}/js/jquery-1.11.1.min.js" language="javascript"></script>
-<script src="{{$assets}}/js/my.js" language="javaScript"></script>
-<script src="{{$assets}}/shizhong/js/jquery-1.11.3.min.js"></script>
-<script src="{{$assets}}/shizhong/js/jquery.fliptimer.js"></script>
-<script src='{{$assets}}/js/overlib410/overlib.js'></script>
-<script src="{{$assets}}/js/zepto.js"></script>
+<script src="/app/assets/js/jquery-1.11.1.min.js" language="javascript"></script>
+<script src="/app/assets/js/my.js" language="javaScript"></script>
+<script src="/app/assets/shizhong/js/jquery-1.11.3.min.js"></script>
+<script src="/app/assets/shizhong/js/jquery.fliptimer.js"></script>
+<script src='/app/assets/js/overlib410/overlib.js'></script>
+<script src="/app/assets/js/zepto.js"></script>
 
-<script src="{{$assets}}/js/remodal.js"></script>
+<script src="/app/assets/js/remodal.js"></script>
 <script>
 	function AddFavorite(sURL, sTitle)
 		{
@@ -623,4 +692,4 @@
 </body>
 
 
-</html>
+</html><?php }} ?>

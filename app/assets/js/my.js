@@ -90,9 +90,14 @@ $(function () {
     $(".pre2").click(function(){
         index--;
         if(index<=0){
-            index = 1;
+            $(".caselist div").eq(7).addClass("active").siblings().removeClass("active");
+
+            $(".f" + 8).stop().fadeIn(600).siblings().stop().hide();
+            $(".showcase-thumbnail-button-forward").click();
+            index=8;
             return false;
         }
+
         $(".caselist div").eq(index-1).addClass("active").siblings().removeClass("active");
         $(".f" + index).stop().fadeIn(600).siblings().stop().hide();
         if(index<5){
@@ -149,13 +154,13 @@ $(function () {
 
 
     $(".xcp_text").click(function () {
-        if ($(this).val() == "可查找一部车的优缺点、油耗、视频……") {
+        if ($(this).val() == "百度一下……") {
             $(this).val("").css("color", "black");
         }
     })
     $(".xcp_text").blur(function () {
         if ($(this).val() == "") {
-            $(this).val("可查找一部车的优缺点、油耗、视频……").css("color", " rgb(153, 153, 153)");
+            $(this).val("百度一下……").css("color", " rgb(153, 153, 153)");
         }
     })
 

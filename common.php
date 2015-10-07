@@ -2,7 +2,8 @@
 header("Content-type: text/html; charset=utf-8");
 require("config.php");  //引用配置文件
 session_start();    //开启session
-
+//echo getcwd(). "/app";
+//exit;
 /* 常量定义开始 */
 defined("SITE_PATH") or define("SITE_PATH", getcwd());  //定义项目路径
 defined("APP_PATH") or define("APP_PATH", SITE_PATH . "/app");    //定义应用路径

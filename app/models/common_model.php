@@ -6,6 +6,7 @@ class CommonModel
     function __construct(){
 
         //模型常用方法, 数据库的操作
+//        $this->mem=new Memcache;
         $this->db = new mysqli(C("db_host"), C("db_username"), C("db_password"), C("db_name"),C("db_port"));
         //检查连接错误
         if (mysqli_connect_errno()) {

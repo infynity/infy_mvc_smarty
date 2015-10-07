@@ -1,9 +1,36 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.20, created on 2015-10-06 21:52:16
+         compiled from "/var/www/infy/app/views/user/login.html" */ ?>
+<?php /*%%SmartyHeaderCode:142848520856136345277e44-51128853%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'bd6db2d36e11b34b8528351849069c54f5510071' => 
+    array (
+      0 => '/var/www/infy/app/views/user/login.html',
+      1 => 1444139535,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '142848520856136345277e44-51128853',
+  'function' => 
+  array (
+  ),
+  'cache_lifetime' => 3600,
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_561363452ad9d2_21170695',
+  'variables' => 
+  array (
+    'assets' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_561363452ad9d2_21170695')) {function content_561363452ad9d2_21170695($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="{{$assets}}/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/bootstrap/css/bootstrap.min.css"/>
     <style>
         .container {
             margin-top: 80px;
@@ -55,8 +82,10 @@
     </form>
 </div>
 
-<script src="{{$assets}}/js/jquery-2.1.4.min.js"></script>
-<script src="{{$assets}}/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/js/jquery-2.1.4.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['assets']->value;?>
+/bootstrap/js/bootstrap.min.js"></script>
 <script>
     $(function(){
         $(".submit").click(function(){
@@ -86,4 +115,4 @@
     })
 </script>
 </body>
-</html>
+</html><?php }} ?>

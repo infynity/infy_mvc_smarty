@@ -1,9 +1,26 @@
-<!DOCTYPE html>
+<?php /*%%SmartyHeaderCode:142848520856136345277e44-51128853%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'bd6db2d36e11b34b8528351849069c54f5510071' => 
+    array (
+      0 => '/var/www/infy/app/views/user/login.html',
+      1 => 1444139535,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '142848520856136345277e44-51128853',
+  'cache_lifetime' => 3600,
+  'version' => 'Smarty-3.1.20',
+  'unifunc' => 'content_5613f3aa72b8e0_63705419',
+  'has_nocache_code' => false,
+),true); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5613f3aa72b8e0_63705419')) {function content_5613f3aa72b8e0_63705419($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="{{$assets}}/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/app/assets/bootstrap/css/bootstrap.min.css"/>
     <style>
         .container {
             margin-top: 80px;
@@ -55,8 +72,8 @@
     </form>
 </div>
 
-<script src="{{$assets}}/js/jquery-2.1.4.min.js"></script>
-<script src="{{$assets}}/bootstrap/js/bootstrap.min.js"></script>
+<script src="/app/assets/js/jquery-2.1.4.min.js"></script>
+<script src="/app/assets/bootstrap/js/bootstrap.min.js"></script>
 <script>
     $(function(){
         $(".submit").click(function(){
@@ -86,4 +103,4 @@
     })
 </script>
 </body>
-</html>
+</html><?php }} ?>

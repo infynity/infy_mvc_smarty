@@ -31,4 +31,22 @@ class IndexModel extends CommonModel
 
     }
 
+    function getmess($id){
+
+
+        $articles = $this->article->where("id>'$id'")->select();
+    }
+
+    function store($post){
+        $nickname=$post['nickname'];
+        $content=$post['content'];
+        $date=time();
+        $this->db->query("insert into messages (`nickname`,`content`,`date`) values ('$nickname','$content','$date')");
+
+    }
+
+    function readmess($id){
+        $articles = $this->all("select * from messages  where `id`>'$id'");
+        return $articles;
+    }
 }
