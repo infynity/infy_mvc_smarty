@@ -26,9 +26,27 @@ class IndexModel extends CommonModel
 
 
     function getimgs(){
-        $articles = $this->all("select * from images  where `display`='1' order by id desc");
+        $articles = $this->all("select * from images  where `display`='1' order by id asc");
         return $articles;
 
     }
 
+    function getmess($id){
+
+
+        $articles = $this->article->where("id>'$id'")->select();
+    }
+
+    function store($post){
+        $nickname=htmlspecialchars($post['nickname']);
+        $content=htmlspecialchars($post['content']);
+        $date=time();
+        $this->db->query("insert into messages (`nickname`,`content`,`date`) values ('$nickname','$content','$date')");
+
+    }
+
+    function readmess($id){
+        $articles = $this->all("select * from messages  where `id`>'$id'");
+        return $articles;
+    }
 }

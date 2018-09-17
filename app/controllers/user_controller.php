@@ -5,7 +5,7 @@ class UserController extends CommonController
     function register()
     {       //方法，实例方法
 
-        $this->display();
+      
     }
 
 

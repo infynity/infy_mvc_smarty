@@ -81,16 +81,18 @@ class CommonController extends Smarty
 
         //配置文件路径
         $this->setConfigDir(APP_PATH . '/views/smarty/configs/');
-
+        $this->caching = true;
         //缓存路径
         $this->setCacheDir(APP_PATH . '/views/smarty/cache/');
-
+//        $this->debugging=true;
         $this->left_delimiter = "{{";
         $this->right_delimiter = "}}";
         //index.html
         $this->template = $this->action . ".html";
         $this->assign("assets", "/app/assets");
     }
+
+
 
     // $s->display();
     /***
@@ -105,6 +107,9 @@ class CommonController extends Smarty
         $template = $template == "" ? $this->template : $template;
         parent::display($template, $cache_id = null, $compile_id = null, $parent = null);
     }
+
+
+
 
 
     /***
