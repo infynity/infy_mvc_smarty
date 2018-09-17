@@ -5,14 +5,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e959dbad60c96e591f87ceea3265f3a3e385d2f' => 
     array (
       0 => '/home/tt2/infy/app/views/index/index.html',
-      1 => 1537174309,
+      1 => 1537176533,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '13695700765b9f5c294f7757-17536347',
   'cache_lifetime' => 3600,
   'version' => 'Smarty-3.1.20',
-  'unifunc' => 'content_5b9f6b5e93cf11_90847541',
+  'unifunc' => 'content_5b9f747a7f5565_73586230',
   'variables' => 
   array (
     'assets' => 0,
@@ -22,7 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5b9f6b5e93cf11_90847541')) {function content_5b9f6b5e93cf11_90847541($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5b9f747a7f5565_73586230')) {function content_5b9f747a7f5565_73586230($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
