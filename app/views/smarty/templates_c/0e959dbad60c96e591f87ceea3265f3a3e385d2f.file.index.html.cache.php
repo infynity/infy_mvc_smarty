@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.20, created on 2018-09-17 07:48:14
+<?php /* Smarty version Smarty-3.1.20, created on 2018-09-17 08:04:35
          compiled from "/home/tt2/infy/app/views/index/index.html" */ ?>
 <?php /*%%SmartyHeaderCode:13695700765b9f5c294f7757-17536347%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e959dbad60c96e591f87ceea3265f3a3e385d2f' => 
     array (
       0 => '/home/tt2/infy/app/views/index/index.html',
-      1 => 1537170490,
+      1 => 1537171461,
       2 => 'file',
     ),
   ),
@@ -683,7 +683,7 @@ $_smarty_tpl->tpl_vars['img']->_loop = true;
        
             }
         },"json")
-        },1000)
+        },30000)
 
         $(window).scroll(function(){
             var top = $(window).scrollTop();
@@ -707,4 +707,5 @@ $_smarty_tpl->tpl_vars['img']->_loop = true;
 </body>
 
 
-</html><?php }} ?>
+</html>
+<?php }} ?>

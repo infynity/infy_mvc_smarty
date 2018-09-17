@@ -1,1 +1,3 @@
-upload/
+upload
+app/views
+app/views/smarty/templates_c/
